@@ -468,39 +468,6 @@
     els.forEach(function(el){ el.classList.add('in'); });
   }
 
-  /* ── 9. FLOATING DOCK NAVIGATION CONTROLLER ─────────── */
-  function initBottomNav() {
-    var path = (window.location.pathname || '').toLowerCase();
-    var tabs = document.querySelectorAll('.dock-tab');
-    if (!tabs.length) return;
-
-    var activeKey = 'home';
-    if (path.indexOf('schedule') !== -1) {
-      activeKey = 'schedule';
-    } else if (path.indexOf('travel') !== -1) {
-      activeKey = 'travel';
-    } else if (path.indexOf('rsvp') !== -1) {
-      activeKey = 'rsvp';
-    } else if (path.indexOf('invite') !== -1) {
-      activeKey = 'invite';
-    } else {
-      activeKey = 'home';
-    }
-
-    tabs.forEach(function(tab) {
-      if (tab.getAttribute('data-page') === activeKey) {
-        tab.classList.add('active');
-      } else {
-        tab.classList.remove('active');
-      }
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initBottomNav);
-  } else {
-    initBottomNav();
-  }
-
+  /* Static Grounded Background Layer (Anchored to top with zero bounce) */
 })();
 

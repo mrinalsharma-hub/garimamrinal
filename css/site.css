@@ -1,56 +1,309 @@
+@font-face {
+  font-family: 'Kugile';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Kugile.ttf?v=24700') format('truetype'),
+       url('../fonts/Kugile_Demo.ttf?v=24700') format('truetype'),
+       local('Kugile');
+}
+
+@font-face {
+  font-family: 'Snell Roundhand';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Snell Roundhand'),
+       local('SnellRoundhand'),
+       url('../fonts/SnellRoundhand.woff?v=24700') format('woff'),
+       url('../fonts/SnellRoundhand.ttf?v=24700') format('truetype');
+}
+
 /* ═══════════════════════════════════════════════════════
    Garima weds Mrinal · Aipan design system
    Ivory line-art on geru red, ported from the invite film
    ═══════════════════════════════════════════════════════ */
 
+@font-face {
+  font-family: 'Cormorant';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Cormorant-Regular.woff2') format('woff2'),
+       url('https://fonts.gstatic.com/s/cormorant/v24/H4clBXOCl9bbnla_nHIq4Zu9uqc.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Quattrocento';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Quattrocento-Regular.woff2') format('woff2'),
+       url('https://fonts.gstatic.com/s/quattrocento/v24/OZpEg_xvsDZQL_LKIF7q4jP3w2j6.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/Lora-Light.woff2') format('woff2'),
+       url('https://fonts.gstatic.com/s/lora/v37/0QIvMX1D_JOuMwX7I-NP.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Lora-Regular.woff2') format('woff2'),
+       url('https://fonts.gstatic.com/s/lora/v37/0QIvMX1D_JOuMwT7I-NP.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/Spectral-Light.woff2') format('woff2'),
+       url('https://fonts.gstatic.com/s/spectral/v15/rnCs-xNNww_2s0amA9uSsG3BafY.woff2') format('woff2');
+}
+
 :root{
-  --red:#A71F23;
-  --red-hi:#B22429;
-  --red-lo:#7E1216;
+  color-scheme: dark;
+  --bg-gradient: radial-gradient(circle 800px at 50% 20%, #B42425 0%, #AC2525 30%, #761219 60%, #3E050A 100%);
+  --bg-color: #AC2525;
+  --gold: #FFDF85;
+  --gold-glow: rgba(255, 223, 133, 0.6);
+  --red:#AC2525;
+  --red-hi:#B42425;
+  --red-lo:#761219;
   --ivory:#FFF6E8;
-  --ivory-dim:rgba(255,246,232,.82);
-  --ivory-faint:rgba(255,246,232,.55);
-  --ink:#661114;                      /* red-dark text on ivory */
-  --ink-soft:rgba(102,17,20,.78);
-  --ink-faint:rgba(102,17,20,.55);
-  --line:rgba(167,31,35,.28);         /* hairlines on ivory */
-  --line-soft:rgba(167,31,35,.16);
+  --ivory-dim:rgba(255,246,232,.9);
+  --ivory-faint:rgba(255,246,232,.7);
+  --ink:#FFFFFF;
+  --ink-soft:rgba(255,255,255,.9);
+  --ink-faint:rgba(255,255,255,.7);
+  --line:rgba(255,255,255,.22);
+  --line-soft:rgba(255,255,255,.14);
+  --card-bg:rgba(255, 255, 255, 0.12);
+  --card-border:rgba(255, 255, 255, 0.22);
+  --card-shadow:0 12px 36px rgba(0, 0, 0, 0.25);
   --header-h:74px;
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;overscroll-behavior-y:none}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+*::-webkit-scrollbar,
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+main::-webkit-scrollbar,
+div::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+html{
+  scroll-behavior:smooth;
+  overscroll-behavior-y:none;
+  background:#A71F23 !important;
+  background-color:#A71F23 !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
 body{
-  background:var(--ivory);
-  color:var(--ink);
-  font-family:'Lustria',Georgia,serif;
+  background: 
+    radial-gradient(circle 340px at 36% 12%, rgba(238, 72, 108, 0.22) 0%, rgba(220, 50, 85, 0.10) 55%, transparent 85%),
+    radial-gradient(circle 360px at 64% 14%, rgba(246, 138, 48, 0.19) 0%, rgba(235, 100, 45, 0.08) 55%, transparent 85%),
+    radial-gradient(ellipse 135% 55% at 50% 18%, rgba(248, 155, 65, 0.17) 0%, rgba(232, 60, 85, 0.14) 50%, transparent 85%),
+    radial-gradient(circle 410px at 46% 23%, rgba(235, 65, 95, 0.17) 0%, rgba(242, 120, 55, 0.08) 60%, transparent 90%),
+    radial-gradient(circle 340px at 58% 27%, rgba(244, 142, 50, 0.15) 0%, transparent 85%),
+    radial-gradient(ellipse 140% 55% at 50% 100%, rgba(167, 31, 35, 0.85) 0%, rgba(167, 31, 35, 0.40) 45%, transparent 80%),
+    radial-gradient(ellipse 120% 70% at 50% 0%, #A71F23 0%, #881818 35%, #701210 65%, #620E0B 100%) !important;
+  background-color:#620E0B !important;
+  background-attachment:fixed !important;
+  color:#FFFFFF !important;
+  font-family:'Cormorant Garamond','Lustria',Georgia,serif;
   line-height:1.65;
   -webkit-font-smoothing:antialiased;
   overscroll-behavior-y:none;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
 img,svg{max-width:100%;display:block}
 a{color:inherit}
 
+/* ── Concept 2: Two-Layer 3D Depth Parallax (Floating Diya Mist + Grounded #7E1216 Base) ── */
+.us-bg-layer,
+.schedule-bg-layer,
+.stay-bg-layer,
+.rsvp-bg-layer,
+.home-bg-layer,
+.fluid-bg-layer {
+  position: fixed !important;
+  inset: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  background: 
+    radial-gradient(ellipse 140% 60% at 50% 100%, rgba(126, 18, 22, 0.92) 0%, rgba(126, 18, 22, 0.45) 50%, transparent 80%),
+    radial-gradient(ellipse 120% 75% at 50% 0%, #A71F23 0%, #8E161A 25%, #7E1216 50%, #6E0F12 75%, #5C0B0E 100%) !important;
+  background-color: #A71F23 !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+}
+
+/* Plane 1: Floating Diya Splatter Mist Atmosphere */
+.us-bg-layer::before,
+.schedule-bg-layer::before,
+.stay-bg-layer::before,
+.rsvp-bg-layer::before,
+.home-bg-layer::before,
+.fluid-bg-layer::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: 
+    radial-gradient(circle 340px at 36% 12%, rgba(238, 72, 108, 0.15) 0%, rgba(220, 50, 85, 0.06) 55%, transparent 85%),
+    radial-gradient(circle 360px at 64% 14%, rgba(246, 138, 48, 0.08) 0%, rgba(235, 100, 45, 0.03) 55%, transparent 85%),
+    radial-gradient(ellipse 135% 55% at 50% 18%, rgba(248, 155, 65, 0.07) 0%, rgba(232, 60, 85, 0.09) 50%, transparent 85%),
+    radial-gradient(circle 410px at 46% 23%, rgba(235, 65, 95, 0.11) 0%, rgba(242, 120, 55, 0.03) 60%, transparent 90%),
+    radial-gradient(circle 340px at 58% 27%, rgba(244, 142, 50, 0.06) 0%, transparent 85%),
+    radial-gradient(circle 385px at 40% 15%, rgba(240, 70, 105, 0.14) 0%, transparent 80%),
+    radial-gradient(circle 410px at 60% 19%, rgba(248, 148, 50, 0.07) 0%, transparent 80%) !important;
+  pointer-events: none !important;
+  opacity: 1 !important;
+  animation: diyaHearthGlow 11s ease-in-out infinite alternate !important;
+}
+
+/* ── Mobile Portrait Screen Parallax Layer Optimization ── */
+@media (max-width: 768px) {
+  :root {
+    --bg-gradient: 
+      radial-gradient(ellipse 140% 60% at 50% 100%, rgba(126, 18, 22, 0.92) 0%, rgba(126, 18, 22, 0.45) 50%, transparent 80%),
+      radial-gradient(ellipse 120% 75% at 50% 0%, #A71F23 0%, #8E161A 25%, #7E1216 50%, #6E0F12 75%, #5C0B0E 100%);
+  }
+
+  body {
+    background-color: #A71F23 !important;
+  }
+
+  .us-bg-layer,
+  .schedule-bg-layer,
+  .stay-bg-layer,
+  .rsvp-bg-layer,
+  .home-bg-layer,
+  .fluid-bg-layer {
+    position: fixed !important;
+    inset: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    background: 
+      radial-gradient(ellipse 140% 60% at 50% 100%, rgba(126, 18, 22, 0.92) 0%, rgba(126, 18, 22, 0.45) 50%, transparent 80%),
+      radial-gradient(ellipse 120% 75% at 50% 0%, #A71F23 0%, #8E161A 25%, #7E1216 50%, #6E0F12 75%, #5C0B0E 100%) !important;
+    background-color: #A71F23 !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+  }
+
+  .us-bg-layer::before,
+  .schedule-bg-layer::before,
+  .stay-bg-layer::before,
+  .rsvp-bg-layer::before,
+  .home-bg-layer::before,
+  .fluid-bg-layer::before {
+    display: block !important;
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: 
+      radial-gradient(circle 340px at 36% 12%, rgba(238, 72, 108, 0.15) 0%, rgba(220, 50, 85, 0.06) 55%, transparent 85%),
+      radial-gradient(circle 360px at 64% 14%, rgba(246, 138, 48, 0.08) 0%, rgba(235, 100, 45, 0.03) 55%, transparent 85%),
+      radial-gradient(ellipse 135% 55% at 50% 18%, rgba(248, 155, 65, 0.07) 0%, rgba(232, 60, 85, 0.09) 50%, transparent 85%),
+      radial-gradient(circle 410px at 46% 23%, rgba(235, 65, 95, 0.11) 0%, rgba(242, 120, 55, 0.03) 60%, transparent 90%),
+      radial-gradient(circle 340px at 58% 27%, rgba(244, 142, 50, 0.06) 0%, transparent 85%),
+      radial-gradient(circle 385px at 40% 15%, rgba(240, 70, 105, 0.14) 0%, transparent 80%),
+      radial-gradient(circle 410px at 60% 19%, rgba(248, 148, 50, 0.07) 0%, transparent 80%) !important;
+    pointer-events: none !important;
+    opacity: 1 !important;
+    animation: diyaHearthGlow 11s ease-in-out infinite alternate !important;
+  }
+}
+
+@keyframes diyaHearthGlow {
+  0% {
+    filter: brightness(0.97);
+  }
+  50% {
+    filter: brightness(1.05);
+  }
+  100% {
+    filter: brightness(0.99);
+  }
+}
+
+/* 2. Raw Silk Fiber Weave Grain Overlay (Soft-Light Anisotropic) */
+.us-bg-layer::after,
+.schedule-bg-layer::after,
+.stay-bg-layer::after,
+.rsvp-bg-layer::after,
+.home-bg-layer::after,
+.fluid-bg-layer::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='silkWeave'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.48 0.32' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.32 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23silkWeave)'/%3E%3C/svg%3E") !important;
+  background-repeat: repeat !important;
+  background-size: 200px 200px !important;
+  mix-blend-mode: soft-light !important;
+  pointer-events: none !important;
+  opacity: 0.85 !important;
+}
+
 /* ── typography ─────────────────────────────────────── */
-h1,h2,h3{font-family:'Cinzel',serif;font-weight:400;line-height:1.15}
-.eyebrow{font-size:12px;letter-spacing:.42em;text-transform:uppercase}
-.sub{font-size:clamp(15px,3.8vw,17px);letter-spacing:.06em;line-height:1.7}
+h1,h2,h3{font-family:'Cinzel',serif;font-weight:400;line-height:1.15;color:#FFFFFF}
+.eyebrow{font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold)}
+.sub{font-size:clamp(15px,3.8vw,17px);letter-spacing:.06em;line-height:1.7;color:var(--ivory-dim)}
 .on-red{color:var(--ivory)}
 .on-red .eyebrow,.on-red .sub{color:var(--ivory-dim)}
 
 /* ── buttons ────────────────────────────────────────── */
 .btn{
-  display:inline-block;padding:13px 42px;border:1.5px solid currentColor;border-radius:2px;
+  display:inline-block;padding:13px 42px;border:1.5px solid rgba(255,255,255,0.4);border-radius:9999px;
   font-family:'Cinzel',serif;font-size:14px;letter-spacing:.34em;text-indent:.34em;
-  text-transform:uppercase;text-decoration:none;background:transparent;cursor:pointer;
-  transition:background .35s,color .35s;
+  text-transform:uppercase;text-decoration:none;background:rgba(255,255,255,0.1);cursor:pointer;
+  color:#FFFFFF !important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  transition:background .35s,color .35s,border-color .35s;
 }
-.on-red .btn{color:var(--ivory)}
-.on-red .btn:hover{background:var(--ivory);color:var(--red)}
-.btn-red{color:var(--red)}
-.btn-red:hover{background:var(--red);color:var(--ivory)}
-.btn-solid{background:var(--red);color:var(--ivory);border-color:var(--red)}
-.btn-solid:hover{background:var(--red-lo);border-color:var(--red-lo);color:var(--ivory)}
+.btn:hover{background:rgba(255,255,255,0.25);border-color:rgba(255,255,255,0.8)}
+.btn-solid{background:linear-gradient(135deg, #FFFFFF 0%, #FFF5EB 100%);color:#4A1220 !important;border-color:transparent;font-weight:600}
+.btn-solid:hover{background:#FFFFFF;box-shadow:0 6px 20px rgba(0,0,0,0.3)}
 
 /* ── header / nav (Navbar) ──────────────────────────── */
 header.site{
@@ -201,44 +454,45 @@ nav.primary a[aria-current="page"]{
 #countdown .lbl{font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--ivory-faint);margin-top:8px}
 .hero .cta{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:4.5vh}
 
-/* ── sections on ivory ──────────────────────────────── */
+/* ── sections ───────────────────────────────────────── */
 main{display:block}
 .section{max-width:980px;margin:0 auto;padding:clamp(52px,9vh,90px) 26px;text-align:center}
-.section h2{font-size:clamp(21px,5.4vw,28px);letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
-.section .eyebrow{color:var(--ink-faint);margin-bottom:14px}
-.section .sub{color:var(--ink-soft);max-width:640px;margin:18px auto 0}
+.section h2{font-size:clamp(22px,5.4vw,32px);letter-spacing:.15em;text-transform:uppercase;color:#FFFFFF;text-shadow:none !important}
+.section .eyebrow{color:var(--gold);margin-bottom:14px}
+.section .sub{color:rgba(255,255,255,0.85);max-width:640px;margin:18px auto 0}
 .section .btn{margin-top:34px}
 
 /* aipan dotted rule between sections */
 .dotted-rule{display:flex;align-items:center;justify-content:center;gap:14px;max-width:980px;margin:0 auto;padding:0 26px}
-.dotted-rule::before,.dotted-rule::after{content:"";height:1px;flex:1;max-width:180px;background:var(--line-soft)}
+.dotted-rule::before,.dotted-rule::after{content:"";height:1px;flex:1;max-width:180px;background:rgba(255,255,255,0.2)}
 .dotted-rule svg{width:26px;height:26px;flex:none}
-.dotted-rule .fill{fill:var(--line)}
+.dotted-rule .fill{fill:var(--gold)}
 
 /* ── cards ──────────────────────────────────────────── */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;margin-top:44px;text-align:left}
 .card{
-  position:relative;border:none;border-radius:2px;padding:30px 26px 28px;background:transparent;
+  position:relative;border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:30px 26px 28px;
+  background:rgba(255,255,255,0.10);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  box-shadow:0 12px 32px rgba(0,0,0,0.25);transition:transform .3s ease, background .3s ease, border-color .3s ease;
 }
-.card::before{display:none}
-.card h3{font-size:16px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
-.card p{font-size:14.5px;color:var(--ink-soft);line-height:1.7}
+.card h3{font-size:17px;letter-spacing:.15em;text-transform:uppercase;color:#FFFFFF;margin-bottom:12px}
+.card p{font-size:15px;color:rgba(255,255,255,0.88);line-height:1.7}
 .card .card-icon{width:44px;height:44px;margin-bottom:16px}
-.card .card-icon path,.card .card-icon circle,.card .card-icon line{stroke:var(--red);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
-.card .card-icon .fill{fill:var(--red);stroke:none}
-a.card{display:block;text-decoration:none;transition:background .3s}
-a.card:hover{background:rgba(167,31,35,.05)}
+.card .card-icon path,.card .card-icon circle,.card .card-icon line{stroke:var(--gold);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.card .card-icon .fill{fill:var(--gold);stroke:none}
+a.card{display:block;text-decoration:none}
+a.card:hover{background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.35);transform:translateY(-3px)}
 
 /* ── schedule (events page) ─────────────────────────── */
 .day-label{
-  font-size:11px;letter-spacing:.3em;white-space:nowrap;text-transform:uppercase;color:var(--ink-faint);
+  font-size:11px;letter-spacing:.3em;white-space:nowrap;text-transform:uppercase;color:var(--gold);
   margin:6vh 0 2.4vh;display:flex;align-items:center;justify-content:center;gap:14px;
 }
-.day-label::before,.day-label::after{content:"";height:1px;width:34px;background:var(--line)}
+.day-label::before,.day-label::after{content:"";height:1px;width:34px;background:rgba(255,255,255,0.2)}
 .ev{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:14px 0;align-items:baseline}
-.ev-t{text-align:right;font-style:italic;font-size:clamp(13px,3.6vw,15px);color:var(--ink-faint)}
-.ev-n{text-align:left;font-family:'Cinzel',serif;font-size:clamp(15px,4vw,18px);letter-spacing:.1em;color:var(--ink)}
-.ev-d{grid-column:2;text-align:left;font-size:13.5px;color:var(--ink-soft);margin-top:-6px;max-width:420px}
+.ev-t{text-align:right;font-style:italic;font-size:clamp(13px,3.6vw,15px);color:var(--gold)}
+.ev-n{text-align:left;font-family:'Cinzel',serif;font-size:clamp(15px,4vw,18px);letter-spacing:.1em;color:#FFFFFF}
+.ev-d{grid-column:2;text-align:left;font-size:13.5px;color:rgba(255,255,255,0.85);margin-top:-6px;max-width:420px}
 
 /* ── forms (rsvp) ───────────────────────────────────── */
 .form-card{max-width:620px;margin:44px auto 0;text-align:left}
@@ -316,7 +570,7 @@ body.gateway-locked {
   position: fixed;
   inset: 0;
   z-index: 999999;
-  display: flex;
+  display: none !important;
   align-items: center;
   justify-content: center;
   padding: 20px;
@@ -332,6 +586,7 @@ body.gateway-locked {
 }
 
 .wedding-gateway-overlay.active {
+  display: flex !important;
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -905,12 +1160,15 @@ header.site,
 
 .dock-tab.active .dock-svg {
   stroke: #FFDF85 !important;
-  filter: drop-shadow(0 2px 8px rgba(255, 223, 133, 0.75)) !important;
+  -webkit-filter: none !important;
+  filter: none !important;
 }
 
 .dock-tab.active .dock-label {
   color: #FFDF85 !important;
   font-weight: 700 !important;
+  -webkit-text-shadow: none !important;
+  text-shadow: none !important;
 }
 
 /* ── CENTER HERO ELEVATED 3D ORB (Reference Image Style) ── */
@@ -993,7 +1251,1334 @@ header.site,
 }
 
 /* Content Viewport Clearance */
-main {
-  padding-bottom: calc(110px + env(safe-area-inset-bottom, 20px)) !important;
+main:not(.celebrations-page-wrap):not(.rsvp-page-wrap):not(.stay-page-wrap) {
+  padding-bottom: calc(96px + env(safe-area-inset-bottom, 20px)) !important;
 }
 
+main.celebrations-page-wrap,
+.celebrations-page-wrap,
+main.stay-page-wrap,
+.stay-page-wrap,
+main.rsvp-page-wrap,
+.rsvp-page-wrap {
+  padding-bottom: calc(66px + env(safe-area-inset-bottom, 0px)) !important;
+  margin-bottom: 0 !important;
+}
+
+/* ── Unified Seamless Ambient Glass Fixed Bottom Navigation with Aipan Icons (Figma Node 18:202) ── */
+header.site, #menu-panel, .mobile-wheel-nav, .site-bottom-nav, .floating-dock-nav { display: none !important; }
+.fixed-bottom-nav {
+  box-sizing: border-box !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100vw !important;
+  height: auto !important;
+  padding: 10px clamp(12px, 5vw, 28px) calc(2px + env(safe-area-inset-bottom, 0px)) !important;
+  background: #ffefd5 !important;
+  background-color: #ffefd5 !important;
+  border: none !important;
+  border-top: 1px solid rgba(167, 31, 35, 0.12) !important;
+  box-shadow: 0 -4px 20px rgba(110, 33, 26, 0.08) !important;
+  z-index: 2147483647 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  pointer-events: auto !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  transform: translate3d(0, 0, 0) !important;
+  -webkit-transform: translate3d(0, 0, 0) !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  contain: layout paint !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease !important;
+  will-change: transform, opacity !important;
+}
+
+.fixed-bottom-nav.nav-hidden,
+.fixed-bottom-nav.is-hidden {
+  transform: translate3d(0, calc(100% + env(safe-area-inset-bottom, 0px) + 24px), 0) !important;
+  -webkit-transform: translate3d(0, calc(100% + env(safe-area-inset-bottom, 0px) + 24px), 0) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.fixed-bottom-nav .nav-container {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 480px !important;
+  height: auto !important;
+  min-height: 52px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(16px, 6vw, 32px) !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+}
+
+.fixed-bottom-nav .nav-tab {
+  box-sizing: border-box !important;
+  flex: 0 0 auto !important;
+  width: auto !important;
+  max-width: none !important;
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  gap: 8px !important;
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -webkit-touch-callout: none !important;
+  position: relative !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  transition: color 0.2s ease, opacity 0.2s ease !important;
+}
+
+.fixed-bottom-nav .nav-tab.active {
+  background: transparent !important;
+}
+
+/* Nav Icon Wrappers & Sizes */
+.fixed-bottom-nav .nav-tab .nav-pill-wrapper {
+  box-sizing: border-box !important;
+  position: relative !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-end !important;
+  height: 26px !important;
+  min-height: 26px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.fixed-bottom-nav .nav-tab[data-tab="gm"] .nav-pill-wrapper,
+.fixed-bottom-nav .nav-tab:nth-child(1) .nav-pill-wrapper {
+  width: 30px !important;
+}
+
+.fixed-bottom-nav .nav-tab[data-tab="stay"] .nav-pill-wrapper,
+.fixed-bottom-nav .nav-tab:nth-child(2) .nav-pill-wrapper {
+  width: 26px !important;
+}
+
+.fixed-bottom-nav .nav-tab[data-tab="celebrations"] .nav-pill-wrapper,
+.fixed-bottom-nav .nav-tab:nth-child(3) .nav-pill-wrapper {
+  width: 32px !important;
+}
+
+.fixed-bottom-nav .nav-tab[data-tab="rsvp"] .nav-pill-wrapper,
+.fixed-bottom-nav .nav-tab:nth-child(4) .nav-pill-wrapper {
+  width: 26px !important;
+}
+
+.fixed-bottom-nav .nav-tab .nav-pill {
+  display: none !important;
+}
+
+/* Base Icon Styling */
+.fixed-bottom-nav .nav-tab .nav-icon {
+  box-sizing: border-box !important;
+  display: block !important;
+  height: 26px !important;
+  flex-shrink: 0 !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  color: #E3BE82 !important;
+  opacity: 1 !important;
+  fill: currentColor !important;
+  stroke: none !important;
+  transform: none !important;
+  -webkit-filter: none !important;
+  filter: none !important;
+  transition: color 0.2s ease, opacity 0.2s ease !important;
+}
+
+.fixed-bottom-nav .nav-tab[data-tab="gm"] .nav-icon,
+.fixed-bottom-nav .nav-tab:nth-child(1) .nav-icon {
+  width: 30px !important;
+}
+
+.fixed-bottom-nav .nav-tab[data-tab="stay"] .nav-icon,
+.fixed-bottom-nav .nav-tab:nth-child(2) .nav-icon {
+  width: 26px !important;
+}
+
+.fixed-bottom-nav .nav-tab[data-tab="celebrations"] .nav-icon,
+.fixed-bottom-nav .nav-tab:nth-child(3) .nav-icon {
+  width: 32px !important;
+}
+
+.fixed-bottom-nav .nav-tab[data-tab="rsvp"] .nav-icon,
+.fixed-bottom-nav .nav-tab:nth-child(4) .nav-icon {
+  width: 26px !important;
+}
+
+/* Active Icon - color #A71F23 and opacity 1 */
+.fixed-bottom-nav .nav-tab.active .nav-icon {
+  color: #A71F23 !important;
+  opacity: 1 !important;
+  fill: #A71F23 !important;
+  stroke: none !important;
+  transform: none !important;
+  -webkit-filter: none !important;
+  filter: none !important;
+}
+
+/* Label below icon - strictly identical font treatment (700 bold), color and size for all tabs */
+.fixed-bottom-nav .nav-tab .nav-label {
+  box-sizing: border-box !important;
+  display: block !important;
+  text-align: center !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: 'Spectral', 'Cinzel', Georgia, serif !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.01em !important;
+  line-height: 12px !important;
+  height: auto !important;
+  color: #E3BE82 !important;
+  opacity: 1 !important;
+  -webkit-text-shadow: none !important;
+  text-shadow: none !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  -webkit-font-smoothing: antialiased !important;
+  transition: color 0.2s ease, opacity 0.2s ease !important;
+}
+
+.fixed-bottom-nav .nav-tab.active .nav-label {
+  color: #A71F23 !important;
+  opacity: 1 !important;
+  font-weight: 700 !important;
+  -webkit-text-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* Completely Remove Active Indicator Dot */
+.fixed-bottom-nav .nav-tab::after {
+  display: none !important;
+  content: none !important;
+}
+
+.fixed-bottom-nav .nav-tab.active::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* No pinch on tap/click - strictly static layout, only color changes */
+.fixed-bottom-nav .nav-tab:active {
+  opacity: 1 !important;
+  transform: none !important;
+  background: transparent !important;
+}
+
+/* ═══════════════════════════════════════════════════════
+   RSVP / Join Us Form Styling (Figma Node 359-173 Match)
+   ═══════════════════════════════════════════════════════ */
+
+.rsvp-page-wrap {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior: none !important;
+  overscroll-behavior-y: none !important;
+  overscroll-behavior-x: none !important;
+  z-index: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  padding-top: 0 !important;
+  padding-bottom: calc(66px + env(safe-area-inset-bottom, 0px)) !important;
+  margin-bottom: 0 !important;
+  touch-action: pan-y !important;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+/* ── 1. Top Connected Aipan Border & Header ── */
+.rsvp-hero-header {
+  width: 100% !important;
+  text-align: center !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  margin-bottom: 32px !important;
+  position: relative !important;
+  z-index: 3 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.aipan-top-border-wrap {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 93.3px !important;
+  background-image: url('../images/aipan_thick_composite_tile.png?v=35000') !important;
+  background-size: auto 93.3px !important;
+  background-repeat: round no-repeat !important;
+  background-position: left top !important;
+  overflow: hidden !important;
+  display: block !important;
+  margin-top: 0 !important;
+  margin-bottom: 24px !important;
+  position: relative !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+.aipan-top-border-svg,
+.aipan-top-border-img {
+  display: none !important;
+}
+
+.rsvp-mandala-wrap {
+  position: relative !important;
+  width: 262px !important;
+  height: 262px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto 28px auto !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+  animation: mandalaGentleHover 7s ease-in-out infinite alternate !important;
+  will-change: transform !important;
+}
+
+.rsvp-dots-ring {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  transform-origin: center center !important;
+  animation: rsvpDotsAntiClockwiseSpin 48.9s linear infinite !important;
+  will-change: transform !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  filter: none !important;
+}
+
+.rsvp-mandala-img {
+  width: 232px !important;
+  height: 232px !important;
+  display: block !important;
+  object-fit: contain !important;
+  transform-origin: center center !important;
+  animation: rsvpMandalaSpin 35.6s linear infinite !important;
+  will-change: transform !important;
+  position: relative !important;
+  z-index: 2 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+  filter: drop-shadow(0 4px 28px rgba(60, 5, 8, 0.16)) !important;
+}
+
+.rsvp-om-center-static,
+.mandala-center-hands {
+  position: absolute !important;
+  top: calc(50% - 0.5px) !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 38.4px !important;
+  height: 35.2px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: none !important;
+  z-index: 3 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+}
+
+.rsvp-om-img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.35)) !important;
+}
+
+.mandala-hands-svg {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+@keyframes mandalaGentleHover {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -2px, 0) scale(1.015);
+  }
+  100% {
+    transform: translate3d(0, 1.5px, 0) scale(1);
+  }
+}
+
+@keyframes rsvpMandalaSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rsvpDotsAntiClockwiseSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.rsvp-title {
+  font-family: 'Cinzel', serif !important;
+  font-size: 48px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0px !important;
+  color: #FFFFFF !important;
+  text-shadow: -0.75px -0.75px 0px rgba(15, 2, 3, 0.65), 0.75px 0.75px 0px rgba(255, 255, 255, 0.25), 0 1.5px 3px rgba(15, 2, 3, 0.20) !important;
+  text-transform: uppercase !important;
+  margin-top: 24px !important;
+  margin-bottom: 0 !important;
+  line-height: 0.92 !important;
+}
+
+.rsvp-subtitle {
+  font-family: 'Cormorant Upright', serif !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  font-size: 24px !important;
+  color: #FFF5EE !important;
+  text-shadow: -0.75px -0.75px 0px rgba(15, 2, 3, 0.65), 0.75px 0.75px 0px rgba(255, 255, 255, 0.25), 0 1.5px 3px rgba(15, 2, 3, 0.20) !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.4 !important;
+  margin-top: 29px !important;
+  margin-bottom: 0 !important;
+  text-align: center !important;
+}
+
+/* ── 2. RSVP / Join Us Dark Translucent Cards Form Styling (Figma Node 358-107 Match) ── */
+.rsvp-form-container {
+  width: 100% !important;
+  max-width: 440px !important;
+  padding: 0 16px !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+.rsvp-form.is-hidden {
+  display: none !important;
+}
+#rsvp-thanks.is-visible {
+  display: block !important;
+}
+
+/* Individual Field Card */
+.rsvp-card-section {
+  background: rgba(255, 255, 255, 0.06) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  backdrop-filter: blur(8px) !important;
+  border-radius: 12px !important;
+  border: none !important;
+  box-shadow: none !important;
+  -webkit-filter: none !important;
+  filter: none !important;
+  padding: 28px !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  text-align: left !important;
+  transition: transform 0.2s ease !important;
+}
+
+.rsvp-card-title {
+  font-family: 'Cinzel', serif !important;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.04em !important;
+  line-height: normal !important;
+  color: #FFFFFF !important;
+  text-shadow: -0.75px -0.75px 0px rgba(15, 2, 3, 0.65), 0.75px 0.75px 0px rgba(255, 255, 255, 0.25), 0 1.5px 3px rgba(15, 2, 3, 0.20) !important;
+  text-align: left !important;
+  text-transform: uppercase !important;
+  margin: 0 0 24px 0 !important;
+}
+
+.req-star {
+  color: #FFB800 !important;
+  font-family: inherit !important;
+  font-weight: 400 !important;
+  margin-left: 2px !important;
+  display: inline-block !important;
+  transition: opacity 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+}
+
+/* Rounded Text Inputs — Smooth Native Focus */
+.rsvp-pill-input {
+  width: 100% !important;
+  height: 54px !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  color: #FFFFFF !important;
+  border: 0.75px solid #FFFFFF !important;
+  border-radius: 8px !important;
+  padding: 0 12px !important;
+  font-family: 'Spectral', Georgia, serif !important;
+  font-weight: 300 !important;
+  font-style: normal !important;
+  font-size: 20px !important;
+  line-height: normal !important;
+  text-align: left !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  -webkit-tap-highlight-color: transparent !important;
+  touch-action: manipulation !important;
+  transform: none !important;
+  transition: background-color 0.15s ease, color 0.15s ease !important;
+}
+
+.rsvp-pill-input:active,
+.rsvp-pill-input:focus {
+  transform: none !important;
+}
+
+.rsvp-pill-input:focus {
+  background-color: #FFFFFF !important;
+  background: #FFFFFF !important;
+  color: #19202F !important;
+  border: 0.75px solid #FFFFFF !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.rsvp-pill-input::placeholder,
+.rsvp-pill-input:disabled {
+  color: rgba(255, 255, 255, 0.28) !important;
+  opacity: 1 !important;
+  text-align: left !important;
+  font-family: 'Spectral', Georgia, serif !important;
+  font-size: 20px !important;
+  font-style: normal !important;
+  font-weight: 300 !important;
+  line-height: normal !important;
+}
+
+.rsvp-pill-input:focus::placeholder {
+  color: transparent !important;
+  opacity: 0 !important;
+  transform: none !important;
+}
+
+/* ── Name Row & Google Material Dual Actions (4 Scenarios) ── */
+.name-row-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  width: 100% !important;
+}
+
+.name-input-row {
+  position: relative !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.name-input-row .rsvp-pill-input {
+  width: 100% !important;
+  padding-right: 76px !important;
+}
+
+.name-row-actions {
+  position: absolute !important;
+  right: 8px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  z-index: 5 !important;
+}
+
+.name-action-btn {
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  padding: 4px !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  -webkit-tap-highlight-color: transparent !important;
+  touch-action: manipulation !important;
+  transition: transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.15s ease, opacity 0.15s ease !important;
+}
+
+.name-action-btn:active {
+  transform: scale(0.88) !important;
+}
+
+.name-action-btn .mat-icon {
+  display: block !important;
+  width: 22px !important;
+  height: 22px !important;
+}
+
+/* ── Scenario 1 & Scenario 4: Empty Text Field (NO icons at all, whether focused or not) ── */
+.name-input-row.is-empty .name-row-actions,
+.name-input-row.is-empty .done-btn,
+.name-input-row.is-empty .rm-person-btn {
+  display: none !important;
+}
+
+/* ── Scenario 2: Active Focused with Text (Both Green Tick & Wine Cross appear) ── */
+.name-input-row:not(.is-empty).is-editing .name-row-actions,
+.name-input-row:not(.is-empty) .rsvp-pill-input:focus ~ .name-row-actions {
+  display: flex !important;
+}
+
+.name-input-row:not(.is-empty).is-editing .done-btn,
+.name-input-row:not(.is-empty) .rsvp-pill-input:focus ~ .name-row-actions .done-btn {
+  display: flex !important;
+  color: #2E7D32 !important; /* Google Material green check */
+  opacity: 1 !important;
+}
+
+.name-input-row:not(.is-empty).is-editing .done-btn:hover,
+.name-input-row:not(.is-empty) .rsvp-pill-input:focus ~ .name-row-actions .done-btn:hover {
+  background-color: rgba(46, 125, 50, 0.12) !important;
+}
+
+.name-input-row:not(.is-empty).is-editing .rm-person-btn,
+.name-input-row:not(.is-empty) .rsvp-pill-input:focus ~ .name-row-actions .rm-person-btn {
+  display: flex !important;
+  color: #8B1E22 !important; /* Google Material wine close on white */
+  opacity: 0.95 !important;
+}
+
+.name-input-row:not(.is-empty).is-editing .rm-person-btn:hover,
+.name-input-row:not(.is-empty) .rsvp-pill-input:focus ~ .name-row-actions .rm-person-btn:hover {
+  background-color: rgba(139, 30, 34, 0.10) !important;
+  opacity: 1 !important;
+}
+
+/* ── Scenario 3: Unfocused with Text (Done / Confirmed: Tick hidden, Pure White Cross remains) ── */
+.name-input-row:not(.is-empty):not(.is-editing) .name-row-actions {
+  display: flex !important;
+}
+
+.name-input-row:not(.is-empty):not(.is-editing) .done-btn {
+  display: none !important; /* Tick disappears completely */
+}
+
+.name-input-row:not(.is-empty):not(.is-editing) .rm-person-btn {
+  display: flex !important;
+  color: #FFFFFF !important; /* Pure white cross */
+  opacity: 0.95 !important;
+}
+
+.name-input-row:not(.is-empty):not(.is-editing) .rm-person-btn:hover {
+  opacity: 1 !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.add-person-btn {
+  display: inline-block !important;
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  padding: 8px 12px !important;
+  margin-top: 8px !important;
+  margin-left: -12px !important;
+  color: #FFFFFF !important;
+  font-family: 'Spectral', Georgia, serif !important;
+  font-weight: 300 !important;
+  font-style: normal !important;
+  font-size: 20px !important;
+  line-height: normal !important;
+  text-align: left !important;
+  border-radius: 8px !important;
+  -webkit-tap-highlight-color: transparent !important;
+  touch-action: manipulation !important;
+  transition: opacity 0.15s ease, transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+}
+
+.add-person-btn:hover {
+  opacity: 0.85 !important;
+}
+
+.add-person-btn:disabled,
+.add-person-btn.is-disabled {
+  opacity: 0.35 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
+.add-person-btn:active {
+  opacity: 0.65 !important;
+  transform: scale(0.96) !important;
+}
+
+/* Custom Radio & Checkbox Rows — Native Spring Micro-interactions */
+.rsvp-options-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  width: 100% !important;
+  text-align: left !important;
+  box-sizing: border-box !important;
+  padding: 0 !important;
+}
+
+/* ── Completely Static Radio & Checkbox Controls (No Jumping / Scaling) ── */
+.rsvp-option-label {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  cursor: pointer !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  margin: 0 !important;
+  padding: 8px 6px !important;
+  border-radius: 8px !important;
+  -webkit-tap-highlight-color: transparent !important;
+  touch-action: manipulation !important;
+  transform: none !important;
+  transition: opacity 0.15s ease !important;
+}
+
+.rsvp-option-label:active {
+  opacity: 0.85 !important;
+  transform: none !important;
+}
+
+.rsvp-option-label input {
+  position: absolute !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Custom Radio Circle */
+.rsvp-radio-mark {
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  border-radius: 50% !important;
+  border: 2px solid #FFFFFF !important;
+  background: transparent !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: background-color 0.15s ease, border-color 0.15s ease !important;
+}
+
+.rsvp-option-label:active .rsvp-radio-mark {
+  transform: none !important;
+}
+
+.rsvp-option-label input:checked + .rsvp-radio-mark {
+  border-color: #FFFFFF !important;
+  background: transparent !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+.rsvp-option-label input:checked + .rsvp-radio-mark::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  background: #FFFFFF !important;
+  animation: none !important;
+}
+
+/* Custom Checkbox Square */
+.rsvp-check-mark {
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  border-radius: 6px !important;
+  border: 2px solid #FFFFFF !important;
+  background: transparent !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: background-color 0.15s ease, border-color 0.15s ease !important;
+}
+
+.rsvp-option-label:active .rsvp-check-mark {
+  transform: none !important;
+}
+
+.rsvp-option-label input:checked + .rsvp-check-mark {
+  background: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+.rsvp-option-label input:checked + .rsvp-check-mark::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 44% !important;
+  width: 6px !important;
+  height: 11px !important;
+  border: solid #8B1E22 !important;
+  border-width: 0 2.4px 2.4px 0 !important;
+  transform: translate(-50%, -50%) rotate(45deg) !important;
+  animation: none !important;
+}
+  60% { transform: translate(-50%, -50%) rotate(45deg) scale(1.25); opacity: 1; }
+  100% { transform: translate(-50%, -50%) rotate(45deg) scale(1); opacity: 1; }
+}
+
+/* 2. Subtext / Normal text */
+.rsvp-option-text {
+  font-family: 'Spectral', Georgia, serif !important;
+  font-size: 20px !important;
+  font-weight: 300 !important;
+  font-style: normal !important;
+  letter-spacing: 0.010em !important;
+  line-height: normal !important;
+  color: #FFFFFF !important;
+  text-shadow: -0.75px -0.75px 0px rgba(15, 2, 3, 0.65), 0.75px 0.75px 0px rgba(255, 255, 255, 0.25), 0 1.5px 3px rgba(15, 2, 3, 0.20) !important;
+  text-align: left !important;
+  transition: opacity 0.15s ease !important;
+}
+
+/* 3. Highlighted text (+200 weight = 500) */
+.rsvp-event-name {
+  font-family: 'Spectral', Georgia, serif !important;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  letter-spacing: 0.010em !important;
+  line-height: normal !important;
+  color: #FFFFFF !important;
+  text-shadow: -0.75px -0.75px 0px rgba(15, 2, 3, 0.65), 0.75px 0.75px 0px rgba(255, 255, 255, 0.25), 0 1.5px 3px rgba(15, 2, 3, 0.20) !important;
+}
+
+.rsvp-event-dot {
+  color: #FFB800 !important;
+  font-size: 14px !important;
+  margin: 0 6px !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  line-height: 1 !important;
+  text-shadow: 0 1px 2px rgba(15, 2, 3, 0.40) !important;
+}
+
+/* 4. Event Date (Matching White Text with Subtle Deboss) */
+.rsvp-event-date {
+  font-family: 'Spectral', Georgia, serif !important;
+  font-size: 20px !important;
+  font-weight: 300 !important;
+  font-style: normal !important;
+  letter-spacing: 0.010em !important;
+  line-height: normal !important;
+  color: #FFFFFF !important;
+  margin-left: 0 !important;
+  text-shadow: -0.75px -0.75px 0px rgba(15, 2, 3, 0.65), 0.75px 0.75px 0px rgba(255, 255, 255, 0.25), 0 1.5px 3px rgba(15, 2, 3, 0.20) !important;
+}
+
+/* Rounded Textarea — Smooth Native Focus */
+.rsvp-textarea-card {
+  width: 100% !important;
+  height: 110px !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  color: #FFFFFF !important;
+  border: 0.75px solid #FFFFFF !important;
+  border-radius: 8px !important;
+  padding: 16px 12px !important;
+  font-family: 'Spectral', Georgia, serif !important;
+  font-weight: 300 !important;
+  font-style: normal !important;
+  font-size: 20px !important;
+  line-height: normal !important;
+  text-align: left !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  resize: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  touch-action: manipulation !important;
+  transform: none !important;
+  transition: background-color 0.15s ease, color 0.15s ease !important;
+}
+
+.rsvp-textarea-card:active,
+.rsvp-textarea-card:focus {
+  transform: none !important;
+}
+
+.rsvp-textarea-card:focus {
+  background-color: #FFFFFF !important;
+  background: #FFFFFF !important;
+  color: #19202F !important;
+  border: 0.75px solid #FFFFFF !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* 4. Disabled/Educational text in light field */
+.rsvp-textarea-card::placeholder,
+.rsvp-textarea-card:disabled {
+  color: rgba(255, 255, 255, 0.28) !important;
+  opacity: 1 !important;
+  text-align: left !important;
+  font-family: 'Spectral', Georgia, serif !important;
+  font-size: 20px !important;
+  font-style: normal !important;
+  font-weight: 300 !important;
+  line-height: normal !important;
+}
+
+.rsvp-textarea-card:focus::placeholder {
+  color: transparent !important;
+  opacity: 0 !important;
+  transform: none !important;
+}
+
+/* 5. Button Text — Tactile Spring Response */
+.rsvp-submit-wrap {
+  margin-top: 14px !important;
+  margin-bottom: 0 !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.rsvp-submit-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  height: 64px !important;
+  min-height: 64px !important;
+  padding: 2px 24px 0 24px !important;
+  background: #FFF6E8 !important;
+  color: #7B181B !important;
+  border: none !important;
+  cursor: pointer !important;
+  border-radius: 9999px !important;
+  font-family: 'Cinzel', serif !important;
+  font-weight: 600 !important;
+  font-size: 20px !important;
+  letter-spacing: 0.04em !important;
+  line-height: 1 !important;
+  text-transform: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  touch-action: manipulation !important;
+  box-shadow: 0 6px 20px rgba(20, 2, 4, 0.25) !important;
+  transition: background-color 0.2s ease, transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.18s ease !important;
+}
+
+.rsvp-submit-btn:hover {
+  background: #FFFFFF !important;
+  transform: scale(1.01) !important;
+  box-shadow: 0 8px 24px rgba(20, 2, 4, 0.30) !important;
+}
+
+.rsvp-submit-btn:active {
+  transform: scale(0.96) !important;
+  box-shadow: 0 2px 8px rgba(20, 2, 4, 0.20) !important;
+}
+
+#rsvp-status {
+  font-family: 'Spectral', Georgia, serif !important;
+  font-size: 20px !important;
+  font-weight: 300 !important;
+  font-style: normal !important;
+  color: rgba(255, 255, 255, 0.90) !important;
+  margin-top: 14px !important;
+  margin-bottom: 40px !important;
+  text-align: center !important;
+  min-height: 1.3em !important;
+  transition: opacity 0.25s ease !important;
+}
+
+/* Thanks Success Screen */
+#rsvp-thanks {
+  display: none;
+  text-align: center;
+  padding: 40px 24px !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-radius: 12px !important;
+  border: none !important;
+  box-shadow: none !important;
+  -webkit-filter: none !important;
+  filter: none !important;
+}
+#rsvp-thanks .big {
+  font-family: 'Cinzel', serif !important;
+  font-weight: 450 !important;
+  font-size: clamp(28px, 6vw, 36px) !important;
+  letter-spacing: .06em !important;
+  color: #FFFFFF !important;
+  margin-bottom: 12px !important;
+}
+#rsvp-thanks .sub {
+  font-family: 'Spectral', Georgia, serif !important;
+  font-weight: 300 !important;
+  font-style: normal !important;
+  font-size: 20px !important;
+  line-height: 1.4 !important;
+  color: #FFFFFF !important;
+  margin-top: 10px !important;
+  margin-bottom: 24px !important;
+}
+#rsvp-thanks .btn-red {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 50px !important;
+  padding: 0 36px !important;
+  background: #FFF6E8 !important;
+  color: #7B181B !important;
+  border-radius: 9999px !important;
+  text-decoration: none !important;
+  font-family: 'Cinzel', 'Spectral', serif !important;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+
+
+
+
+/* ── Universal Royal Medallion Music Player (Figma Node 26:627 · 56x56px) ── */
+.celebration-player-btn,
+.global-audio-pill {
+  position: fixed !important;
+  top: max(14px, env(safe-area-inset-top, 14px)) !important;
+  right: max(14px, env(safe-area-inset-right, 14px)) !important;
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block !important;
+  cursor: pointer !important;
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  filter: drop-shadow(0 2px 8px rgba(167, 31, 35, 0.12)) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  z-index: 9999 !important;
+  transform: translateZ(0) !important;
+  -webkit-transform: translateZ(0) !important;
+  transition: filter 0.25s ease, opacity 0.25s ease !important;
+}
+
+/* Hide floating medallion player on Home page (G&M.html / index.html) where centerpiece Vinyl Player is used */
+body.home-page .celebration-player-btn,
+body.home-page #global-music-player,
+body[data-page="gm"] .celebration-player-btn,
+body[data-page="gm"] #global-music-player {
+  display: none !important;
+}
+
+/* Ensure floating medallion player is ALWAYS visible on all other tabs */
+body:not(.home-page):not([data-page="gm"]) .celebration-player-btn,
+body:not(.home-page):not([data-page="gm"]) #global-music-player {
+  display: block !important;
+}
+
+.celebration-player-btn:hover,
+.global-audio-pill:hover {
+  filter: drop-shadow(0 4px 14px rgba(167, 31, 35, 0.22)) !important;
+}
+
+.celebration-player-btn:active,
+.global-audio-pill:active {
+  filter: drop-shadow(0 1px 4px rgba(167, 31, 35, 0.18)) !important;
+}
+
+.celebration-player-btn .player-state-img,
+.global-audio-pill .player-state-img {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  transition: opacity 0.24s cubic-bezier(0.16, 1, 0.3, 1), transform 0.24s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  -webkit-transition: opacity 0.24s cubic-bezier(0.16, 1, 0.3, 1), -webkit-transform 0.24s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* State 1: Play (Default when not playing) */
+.celebration-player-btn .player-img-play,
+.global-audio-pill .player-img-play {
+  opacity: 1 !important;
+  transform: scale(1) translateZ(0) !important;
+  -webkit-transform: scale(1) translateZ(0) !important;
+}
+.celebration-player-btn .player-img-pause,
+.global-audio-pill .player-img-pause {
+  opacity: 0 !important;
+  transform: scale(0.88) translateZ(0) !important;
+  -webkit-transform: scale(0.88) translateZ(0) !important;
+}
+
+/* State 2: Pause (When music is playing) */
+.celebration-player-btn.is-playing .player-img-play,
+.global-audio-pill.is-playing .player-img-play {
+  opacity: 0 !important;
+  transform: scale(0.88) translateZ(0) !important;
+  -webkit-transform: scale(0.88) translateZ(0) !important;
+}
+.celebration-player-btn.is-playing .player-img-pause,
+.global-audio-pill.is-playing .player-img-pause {
+  opacity: 1 !important;
+  transform: scale(1) translateZ(0) !important;
+  -webkit-transform: scale(1) translateZ(0) !important;
+}
+
+
+/* ── Full-Canvas Tonal Botanical Jacquard Pattern (Option 1) ── */
+.rsvp-botanical-art-layer {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-image: url('../images/rsvp_botanical_gold_lines.webp?v=16600') !important;
+  background-repeat: repeat !important;
+  background-position: top center !important;
+  background-size: 795px 795px !important;
+  mix-blend-mode: soft-light !important;
+  opacity: 0.42 !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+
+
+/* ── Events Page Botanical Background Art Layer ── */
+.events-botanical-art-layer {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-image: url('../images/events_botanical_tonal_lines.webp?v=12200') !important;
+  background-repeat: repeat !important;
+  background-position: top center !important;
+  background-size: 418px 418px !important;
+  opacity: 0.25 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Audio player placement on rsvp.html below Aipan top border */
+body.rsvp-page .global-audio-pill,
+.rsvp-hero-header .global-audio-pill,
+.rsvp-page-wrap .global-audio-pill,
+.rsvp-page-wrap ~ .global-audio-pill {
+  position: absolute !important;
+  top: max(60px, calc(52.4px + 8px + env(safe-area-inset-top, 0px))) !important;
+  right: max(14px, env(safe-area-inset-right, 14px)) !important;
+  z-index: 25 !important;
+}
+
+/* ── Locked-in Royal Carmine Gradient for rsvp.html ── */
+body.rsvp-page,
+.rsvp-bg-layer {
+  background-color: #B02428 !important;
+}
+.rsvp-bg-layer {
+  background: 
+    radial-gradient(ellipse 135% 60% at 50% 100%, rgba(98, 10, 14, 0.95) 0%, rgba(98, 10, 14, 0.55) 50%, transparent 80%),
+    radial-gradient(ellipse 118% 75% at 50% 0%, #B02428 0%, #94181C 25%, #7B1115 50%, #620B0E 75%, #4C070A 100%) !important;
+}
+.rsvp-bg-layer::before {
+  background: 
+    radial-gradient(circle 380px at 45% 15%, rgba(248, 130, 50, 0.11) 0%, rgba(235, 60, 85, 0.05) 55%, transparent 85%),
+    radial-gradient(ellipse 135% 60% at 50% 18%, rgba(248, 140, 55, 0.08) 0%, transparent 80%) !important;
+}
+
+/* ── Unified Light Theme Bottom Navigation for RSVP page ── */
+body.rsvp-page .fixed-bottom-nav,
+.rsvp-page-wrap ~ .fixed-bottom-nav {
+  background: #FFEFD4 !important;
+  background-color: #FFEFD4 !important;
+  border-top: 1px solid rgba(167, 31, 35, 0.12) !important;
+  box-shadow: 0 -4px 20px rgba(110, 33, 26, 0.08) !important;
+}
+
+body.rsvp-page .fixed-bottom-nav .nav-tab.active .nav-icon,
+body.rsvp-page .fixed-bottom-nav .nav-tab.active .nav-label,
+.rsvp-page-wrap ~ .fixed-bottom-nav .nav-tab.active .nav-icon,
+.rsvp-page-wrap ~ .fixed-bottom-nav .nav-tab.active .nav-label {
+  color: #A71F23 !important;
+  fill: #A71F23 !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  text-shadow: none !important;
+  -webkit-text-shadow: none !important;
+}
+
+
+
+
+/* On confirmation screen, hide the RSVP instructions subtitle */
+.rsvp-hero-header.is-confirmed .rsvp-subtitle,
+.rsvp-page-wrap.is-confirmed .rsvp-subtitle,
+body.rsvp-confirmed .rsvp-subtitle {
+  display: none !important;
+}
+
+.rsvp-hero-header.is-confirmed {
+  margin-bottom: 36px !important;
+}
+
+
+/* ── Disabled Card Sections when Declining RSVP (Identical Background Treatment, Dimmed Text) ── */
+.rsvp-card-section.is-disabled-section {
+  pointer-events: none !important;
+  user-select: none !important;
+  cursor: not-allowed !important;
+  /* Keep background and blur identical to enabled cards */
+  background: rgba(255, 255, 255, 0.06) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  backdrop-filter: blur(8px) !important;
+  border-radius: 12px !important;
+}
+
+.rsvp-card-section.is-disabled-section .rsvp-card-title,
+.rsvp-card-section.is-disabled-section .rsvp-option-text,
+.rsvp-card-section.is-disabled-section .rsvp-event-name,
+.rsvp-card-section.is-disabled-section .rsvp-event-date,
+.rsvp-card-section.is-disabled-section .rsvp-event-dot,
+.rsvp-card-section.is-disabled-section .req-star {
+  opacity: 0.32 !important;
+  transition: opacity 0.25s ease !important;
+}
+
+.rsvp-card-section.is-disabled-section .rsvp-check-mark {
+  opacity: 0.30 !important;
+  border-color: rgba(255, 255, 255, 0.40) !important;
+  transition: opacity 0.25s ease, border-color 0.25s ease !important;
+}
+
+.rsvp-card-section.is-disabled-section .rsvp-pill-input,
+.rsvp-card-section.is-disabled-section .rsvp-textarea-card {
+  opacity: 0.32 !important;
+  border-color: rgba(255, 255, 255, 0.40) !important;
+  pointer-events: none !important;
+  cursor: not-allowed !important;
+  transition: opacity 0.25s ease, border-color 0.25s ease !important;
+}
+
+.rsvp-card-section.is-disabled-section .rsvp-pill-input::placeholder,
+.rsvp-card-section.is-disabled-section .rsvp-textarea-card::placeholder {
+  color: rgba(255, 255, 255, 0.32) !important;
+  opacity: 1 !important;
+}
+
+
+/* ── Floating Gold Sparks & Diya Embers Canvas ── */
+.particles-canvas {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+
+/* Hide Sheet Drag Handle globally */
+.sheet-drag-handle {
+  display: none !important;
+}
